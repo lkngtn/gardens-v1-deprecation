@@ -83,6 +83,9 @@ This bundle is unsigned verification evidence. It cannot sign or submit a transa
 - Gnosis block: \`${metadata.snapshot.blockNumber}\` / \`${metadata.snapshot.blockHash}\`
 - Replacement authority: \`${metadata.authority.address}\` (${metadata.authority.kind})
 - Common Pool HNY: \`${metadata.snapshot.commonPoolHnyWei}\` wei (${metadata.snapshot.commonPoolHny} HNY)
+- Active Decision votes: ${metadata.snapshot.activeDecisionVotes.length}
+- Readable active Conviction proposals: ${metadata.snapshot.activeConvictionProposals.length}
+- Conviction proposal IDs that reverted during direct reads: ${metadata.snapshot.unreadableConvictionProposalIds.length === 0 ? 'none' : metadata.snapshot.unreadableConvictionProposalIds.join(', ')}
 
 ## Vote 1
 
@@ -97,6 +100,8 @@ This bundle is unsigned verification evidence. It cannot sign or submit a transa
 - Execution-script hash: \`${metadata.vote2.scriptHash}\`
 
 The shared Celeste Court is not targeted. External review is encouraged but advisory; live-state, exact-hash, and fork checks remain mandatory.
+
+An unreadable Conviction proposal is reported rather than silently classified. Historical proposals can revert because the legacy SlidingWindowOracle lacks an observation; operators must cross-check every reported ID before production.
 
 Run \`npm run verify:bundle -- --bundle <directory>\` and \`GNOSIS_RPC_URL=... npm run verify:fork -- --bundle <directory>\` from the source commit above.
 `;

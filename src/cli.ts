@@ -31,7 +31,18 @@ async function main(): Promise<void> {
     if (!rpcUrl) throw new Error('GNOSIS_RPC_URL is required for read-only snapshot export.');
     const config = await loadConfig(configPath);
     const metadata = await exportBundle(config, rpcUrl, path.resolve(out));
-    console.log(JSON.stringify({ ok: true, output: path.resolve(out), block: metadata.snapshot.blockNumber, vote1: metadata.vote1, vote2: metadata.vote2 }, null, 2));
+    console.log(JSON.stringify({
+      ok: true,
+      output: path.resolve(out),
+      block: metadata.snapshot.blockNumber,
+      governance: {
+        activeDecisionVotes: metadata.snapshot.activeDecisionVotes.length,
+        activeConvictionProposals: metadata.snapshot.activeConvictionProposals.length,
+        unreadableConvictionProposalIds: metadata.snapshot.unreadableConvictionProposalIds
+      },
+      vote1: metadata.vote1,
+      vote2: metadata.vote2
+    }, null, 2));
     return;
   }
 
