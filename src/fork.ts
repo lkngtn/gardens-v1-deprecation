@@ -11,6 +11,7 @@ import {
   parseEventLogs,
   parseUnits,
   stringToHex,
+  toHex,
   type Hash
 } from 'viem';
 import { ACL_ABI, AGREEMENT_ABI, CONVICTION_ABI, DECISION_ABI, ERC20_ABI, STAKING_ABI } from './abis.js';
@@ -84,9 +85,16 @@ async function impersonate(client: ReturnType<typeof forkClient>, address: Addre
 
 async function send(client: ReturnType<typeof forkClient>, from: Address, to: Address, data: Hex): Promise<{ hash: Hash; gasUsed: bigint }> {
   await impersonate(client, from);
-  const hash = await rpc(client, 'eth_sendTransaction', [{ from, to, value: '0x0', data }]) as Hash;
+  let gas: bigint;
+  try {
+    await client.call({ account: from, to, data });
+    gas = await client.estimateGas({ account: from, to, data });
+  } catch (error) {
+    throw new Error(`Fork transaction simulation failed; from ${from}; to ${to}; selector ${data.slice(0, 10)}: ${error instanceof Error ? error.message : String(error)}`);
+  }
+  const hash = await rpc(client, 'eth_sendTransaction', [{ from, to, value: '0x0', data, gas: toHex(gas * 12n / 10n) }]) as Hash;
   const receipt = await client.waitForTransactionReceipt({ hash });
-  if (receipt.status !== 'success') throw new Error(`Fork transaction reverted: ${hash}.`);
+  if (receipt.status !== 'success') throw new Error(`Fork transaction reverted: ${hash}; from ${from}; to ${to}; selector ${data.slice(0, 10)}.`);
   return { hash, gasUsed: receipt.gasUsed };
 }
 
@@ -132,7 +140,8 @@ async function makeExecutable(client: ReturnType<typeof forkClient>, voteId: big
 
 async function restoreCommonPool(client: ReturnType<typeof forkClient>, expected: bigint): Promise<void> {
   const liquid = await actorBalance(client);
-  if (liquid > 0n) await transfer(client, ACTOR, ADDRESSES.COMMON_POOL, liquid);
+  if (liquid <= CONVICTION_STAKE) throw new Error('Fork actor lacks the expected Conviction stake reserve.');
+  await transfer(client, ACTOR, ADDRESSES.COMMON_POOL, liquid - CONVICTION_STAKE);
   const actual = await client.readContract({ address: ADDRESSES.HNY, abi: ERC20_ABI, functionName: 'balanceOf', args: [ADDRESSES.COMMON_POOL] });
   if (actual < expected) await transfer(client, LIQUIDITY_PAIR, ADDRESSES.COMMON_POOL, expected - actual);
   const restored = await client.readContract({ address: ADDRESSES.HNY, abi: ERC20_ABI, functionName: 'balanceOf', args: [ADDRESSES.COMMON_POOL] });

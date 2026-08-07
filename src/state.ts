@@ -75,6 +75,42 @@ export async function readSnapshot(config: ProposalConfig, rpcUrl: string): Prom
   if (commonPoolHnyWei <= 0n) throw new Error('Common Pool HNY balance must be greater than zero.');
   if (convictionPaused) throw new Error('Conviction Voting is already paused; expected pre-Vote-1 state.');
 
+  const activeDecisionVotes: Snapshot['activeDecisionVotes'] = [];
+  for (let voteId = 0n; voteId < decisionVotesLength; voteId += 1n) {
+    const [vote, openForVoting, canExecute] = await Promise.all([
+      client.readContract({ address: ADDRESSES.DECISION_VOTING, abi: DECISION_ABI, functionName: 'getVote', args: [voteId], blockNumber }),
+      client.readContract({ address: ADDRESSES.DECISION_VOTING, abi: DECISION_ABI, functionName: 'isVoteOpenForVoting', args: [voteId], blockNumber }),
+      client.readContract({ address: ADDRESSES.DECISION_VOTING, abi: DECISION_ABI, functionName: 'canExecute', args: [voteId], blockNumber })
+    ]);
+    const status = Number(vote[5]);
+    if (openForVoting || canExecute || status === 1) activeDecisionVotes.push({ voteId: voteId.toString(), actionId: vote[7].toString(), status, openForVoting, canExecute });
+  }
+
+  const activeConvictionProposals: Snapshot['activeConvictionProposals'] = [];
+  let consecutiveEmpty = 0;
+  let proposalId = 2n;
+  let lastExistingProposalId = 1n;
+  while (proposalId <= 1000n && consecutiveEmpty < 20) {
+    const batch = Array.from({ length: Math.min(20, 1001 - Number(proposalId)) }, (_, offset) => proposalId + BigInt(offset));
+    const proposals = await Promise.all(batch.map(async (id) => ({
+      id,
+      value: await client.readContract({ address: ADDRESSES.CONVICTION_VOTING, abi: CONVICTION_ABI, functionName: 'getProposal', args: [id], blockNumber })
+    })));
+    for (const { id, value } of proposals) {
+      const empty = value[8].toLowerCase() === '0x0000000000000000000000000000000000000000';
+      if (empty) {
+        consecutiveEmpty += 1;
+      } else {
+        consecutiveEmpty = 0;
+        lastExistingProposalId = id;
+        if (Number(value[7]) === 0) activeConvictionProposals.push({ proposalId: id.toString(), agreementActionId: value[6].toString(), stakedTokensWei: value[3].toString() });
+      }
+      if (consecutiveEmpty >= 20) break;
+    }
+    proposalId += BigInt(batch.length);
+  }
+  if (proposalId > 1000n && consecutiveEmpty < 20) throw new Error('Conviction proposal scan reached its safety cap without finding the end of the sequence.');
+
   const authorityCode = await client.getBytecode({ address: config.replacementAuthority, blockNumber });
   let authority: AuthorityEvidence;
   if (config.kind === 'design') {
@@ -104,6 +140,9 @@ export async function readSnapshot(config: ProposalConfig, rpcUrl: string): Prom
       commonPoolHny: formatUnits(commonPoolHnyWei, 18),
       convictionPaused,
       decisionVotesLength: decisionVotesLength.toString(),
+      activeDecisionVotes,
+      activeConvictionProposals,
+      convictionProposalScan: { firstProposalId: '2', lastExistingProposalId: lastExistingProposalId.toString(), stoppedAfterConsecutiveEmpty: 20 },
       grants,
       managers
     },

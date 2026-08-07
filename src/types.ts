@@ -50,6 +50,9 @@ export type Snapshot = {
   commonPoolHny: string;
   convictionPaused: boolean;
   decisionVotesLength: string;
+  activeDecisionVotes: Array<{ voteId: string; actionId: string; status: number; openForVoting: boolean; canExecute: boolean }>;
+  activeConvictionProposals: Array<{ proposalId: string; agreementActionId: string; stakedTokensWei: string }>;
+  convictionProposalScan: { firstProposalId: '2'; lastExistingProposalId: string; stoppedAfterConsecutiveEmpty: 20 };
   grants: SnapshotGrant[];
   managers: SnapshotManager[];
 };

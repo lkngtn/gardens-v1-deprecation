@@ -10,7 +10,8 @@ export const CONVICTION_ABI = [
   { type: 'function', name: 'pauseContract', stateMutability: 'nonpayable', inputs: [{ name: '_pauseEnabled', type: 'bool' }], outputs: [] },
   { type: 'function', name: 'contractPaused', stateMutability: 'view', inputs: [], outputs: [{ type: 'bool' }] },
   { type: 'function', name: 'stakeToProposal', stateMutability: 'nonpayable', inputs: [{ name: '_proposalId', type: 'uint256' }, { name: '_amount', type: 'uint256' }], outputs: [] },
-  { type: 'function', name: 'withdrawFromProposal', stateMutability: 'nonpayable', inputs: [{ name: '_proposalId', type: 'uint256' }, { name: '_amount', type: 'uint256' }], outputs: [] }
+  { type: 'function', name: 'withdrawFromProposal', stateMutability: 'nonpayable', inputs: [{ name: '_proposalId', type: 'uint256' }, { name: '_amount', type: 'uint256' }], outputs: [] },
+  { type: 'function', name: 'getProposal', stateMutability: 'view', inputs: [{ name: '_proposalId', type: 'uint256' }], outputs: [{ name: 'requestedAmount', type: 'uint256' }, { name: 'stableRequestAmount', type: 'bool' }, { name: 'beneficiary', type: 'address' }, { name: 'stakedTokens', type: 'uint256' }, { name: 'convictionLast', type: 'uint256' }, { name: 'blockLast', type: 'uint64' }, { name: 'agreementActionId', type: 'uint256' }, { name: 'proposalStatus', type: 'uint8' }, { name: 'submitter', type: 'address' }, { name: 'threshold', type: 'uint256' }] }
 ] as const;
 
 export const AGENT_ABI = [
@@ -31,6 +32,7 @@ export const DECISION_ABI = [
   { type: 'function', name: 'getVote', stateMutability: 'view', inputs: [{ name: '_voteId', type: 'uint256' }], outputs: [{ name: 'yea', type: 'uint256' }, { name: 'nay', type: 'uint256' }, { name: 'totalPower', type: 'uint256' }, { name: 'startDate', type: 'uint64' }, { name: 'snapshotBlock', type: 'uint64' }, { name: 'status', type: 'uint8' }, { name: 'settingId', type: 'uint256' }, { name: 'actionId', type: 'uint256' }, { name: 'pausedAt', type: 'uint64' }, { name: 'pauseDuration', type: 'uint64' }, { name: 'quietEndingExtensionDuration', type: 'uint64' }, { name: 'quietEndingSnapshotSupport', type: 'uint8' }, { name: 'executionScriptHash', type: 'bytes32' }] },
   { type: 'function', name: 'getSetting', stateMutability: 'view', inputs: [{ name: '_settingId', type: 'uint256' }], outputs: [{ name: 'voteTime', type: 'uint64' }, { name: 'supportRequiredPct', type: 'uint64' }, { name: 'minAcceptQuorumPct', type: 'uint64' }, { name: 'delegatedVotingPeriod', type: 'uint64' }, { name: 'quietEndingPeriod', type: 'uint64' }, { name: 'quietEndingExtension', type: 'uint64' }, { name: 'executionDelay', type: 'uint64' }] },
   { type: 'function', name: 'canExecute', stateMutability: 'view', inputs: [{ name: '_voteId', type: 'uint256' }], outputs: [{ type: 'bool' }] },
+  { type: 'function', name: 'isVoteOpenForVoting', stateMutability: 'view', inputs: [{ name: '_voteId', type: 'uint256' }], outputs: [{ type: 'bool' }] },
   { type: 'function', name: 'votesLength', stateMutability: 'view', inputs: [], outputs: [{ type: 'uint256' }] }
 ] as const;
 
