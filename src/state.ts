@@ -87,16 +87,26 @@ export async function readSnapshot(config: ProposalConfig, rpcUrl: string): Prom
   }
 
   const activeConvictionProposals: Snapshot['activeConvictionProposals'] = [];
+  const unreadableConvictionProposalIds: string[] = [];
   let consecutiveEmpty = 0;
   let proposalId = 2n;
   let lastExistingProposalId = 1n;
   while (proposalId <= 1000n && consecutiveEmpty < 20) {
     const batch = Array.from({ length: Math.min(20, 1001 - Number(proposalId)) }, (_, offset) => proposalId + BigInt(offset));
-    const proposals = await Promise.all(batch.map(async (id) => ({
-      id,
-      value: await client.readContract({ address: ADDRESSES.CONVICTION_VOTING, abi: CONVICTION_ABI, functionName: 'getProposal', args: [id], blockNumber })
-    })));
+    const proposals = await Promise.all(batch.map(async (id) => {
+      try {
+        return { id, value: await client.readContract({ address: ADDRESSES.CONVICTION_VOTING, abi: CONVICTION_ABI, functionName: 'getProposal', args: [id], blockNumber }) } as const;
+      } catch {
+        return { id, value: null } as const;
+      }
+    }));
     for (const { id, value } of proposals) {
+      if (value === null) {
+        unreadableConvictionProposalIds.push(id.toString());
+        consecutiveEmpty = 0;
+        lastExistingProposalId = id;
+        continue;
+      }
       const empty = value[8].toLowerCase() === '0x0000000000000000000000000000000000000000';
       if (empty) {
         consecutiveEmpty += 1;
@@ -142,6 +152,7 @@ export async function readSnapshot(config: ProposalConfig, rpcUrl: string): Prom
       decisionVotesLength: decisionVotesLength.toString(),
       activeDecisionVotes,
       activeConvictionProposals,
+      unreadableConvictionProposalIds,
       convictionProposalScan: { firstProposalId: '2', lastExistingProposalId: lastExistingProposalId.toString(), stoppedAfterConsecutiveEmpty: 20 },
       grants,
       managers

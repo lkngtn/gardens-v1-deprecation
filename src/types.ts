@@ -52,6 +52,7 @@ export type Snapshot = {
   decisionVotesLength: string;
   activeDecisionVotes: Array<{ voteId: string; actionId: string; status: number; openForVoting: boolean; canExecute: boolean }>;
   activeConvictionProposals: Array<{ proposalId: string; agreementActionId: string; stakedTokensWei: string }>;
+  unreadableConvictionProposalIds: string[];
   convictionProposalScan: { firstProposalId: '2'; lastExistingProposalId: string; stoppedAfterConsecutiveEmpty: 20 };
   grants: SnapshotGrant[];
   managers: SnapshotManager[];
