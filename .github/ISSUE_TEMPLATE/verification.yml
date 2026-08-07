@@ -1,0 +1,42 @@
+name: Independent verification
+description: Publish reproducible proposal verification results or an exact discrepancy.
+title: "Verification: "
+labels: [verification]
+body:
+  - type: input
+    id: commit
+    attributes:
+      label: Full source commit
+    validations:
+      required: true
+  - type: input
+    id: snapshot
+    attributes:
+      label: Snapshot block and hash
+    validations:
+      required: true
+  - type: input
+    id: safe
+    attributes:
+      label: Replacement Safe
+    validations:
+      required: true
+  - type: input
+    id: hashes
+    attributes:
+      label: Vote 1 and Vote 2 script hashes
+    validations:
+      required: true
+  - type: dropdown
+    id: fork
+    attributes:
+      label: Fresh normal-limit fork result
+      options: [pass, fail, not-run]
+    validations:
+      required: true
+  - type: textarea
+    id: findings
+    attributes:
+      label: Findings, exceptions, or concerns
+    validations:
+      required: true

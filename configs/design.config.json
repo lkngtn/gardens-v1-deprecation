@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "kind": "design",
+  "chainId": 100,
+  "snapshotBlock": "47606645",
+  "replacementAuthority": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+  "expectedSafeOwners": [],
+  "expectedSafeThreshold": 0
+}

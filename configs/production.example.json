@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "kind": "production",
+  "chainId": 100,
+  "snapshotBlock": "REPLACE_WITH_EXACT_BLOCK_NUMBER",
+  "replacementAuthority": "REPLACE_WITH_DEPLOYED_SAFE",
+  "expectedSafeOwners": ["REPLACE_WITH_OWNER_ADDRESS"],
+  "expectedSafeThreshold": 1
+}
