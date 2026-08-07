@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "kind": "design-eoa",
+  "address": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+  "bytecodeHash": "0xcc03574af7d796e2d4636946205cd74b6ea63937364c854779f016d40bc62406",
+  "owners": [],
+  "threshold": 0,
+  "chainId": 100
+}

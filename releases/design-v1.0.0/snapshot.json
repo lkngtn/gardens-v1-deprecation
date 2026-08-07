@@ -1,0 +1,551 @@
+{
+  "schemaVersion": 1,
+  "chainId": 100,
+  "blockNumber": "47606645",
+  "blockHash": "0x5186613522dda0bb356cffa5775fca326c5d0e7a1034e9795f28c06c9b058c35",
+  "timestamp": "2026-08-07T17:59:15.000Z",
+  "contracts": {
+    "daoKernel": {
+      "address": "0x8ccbeab14b5ac4a431fffc39f4bec4089020a155",
+      "bytecodeHash": "0xe8275bec48e153f1374ff61995e5f1459ecd77e793b8f8afd1c6c5546177d94f"
+    },
+    "acl": {
+      "address": "0xbc4fb635636b81e60a4e356c4dceb53cac507d03",
+      "bytecodeHash": "0xe9ceeeac70d569ac5c96b051ae87c43ed8aaca6ed2328010b1889414fa5b6963"
+    },
+    "convictionVoting": {
+      "address": "0x0b21081c6f8b1990f53fc76279cc41ba22d7afe2",
+      "bytecodeHash": "0xe9ceeeac70d569ac5c96b051ae87c43ed8aaca6ed2328010b1889414fa5b6963"
+    },
+    "decisionVoting": {
+      "address": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "bytecodeHash": "0xe9ceeeac70d569ac5c96b051ae87c43ed8aaca6ed2328010b1889414fa5b6963"
+    },
+    "agreement": {
+      "address": "0x59a15718992a42082ab2306bc6cbd662958a178c",
+      "bytecodeHash": "0xe9ceeeac70d569ac5c96b051ae87c43ed8aaca6ed2328010b1889414fa5b6963"
+    },
+    "tokenManager": {
+      "address": "0xed062e26c8f41a9088d060156edc7fc6c17d5825",
+      "bytecodeHash": "0xe9ceeeac70d569ac5c96b051ae87c43ed8aaca6ed2328010b1889414fa5b6963"
+    },
+    "commonPool": {
+      "address": "0x4ba7362f9189572cbb1216819a45aba0d0b2d1cb",
+      "bytecodeHash": "0xe9ceeeac70d569ac5c96b051ae87c43ed8aaca6ed2328010b1889414fa5b6963"
+    },
+    "hny": {
+      "address": "0x71850b7E9Ee3f13Ab46d67167341E4bDc905Eef9",
+      "bytecodeHash": "0x77b4d5a24f08e58d0ab655c360b73e45767eb2adb0ad4d3190bceee07ec39927"
+    },
+    "dynamicIssuance": {
+      "address": "0x783da66eea5a93f46f386806fce49ce18937f861",
+      "bytecodeHash": "0xe9ceeeac70d569ac5c96b051ae87c43ed8aaca6ed2328010b1889414fa5b6963"
+    },
+    "celesteCourt": {
+      "address": "0x44E4fCFed14E1285c9e0F6eae77D5fDd0F196f85",
+      "bytecodeHash": "0xe10453206d09ad4c9c69be70d5a4568e4ae2c629f8cc39c2694445d85a513fe3"
+    }
+  },
+  "commonPoolHnyWei": "21398659784944634936554",
+  "commonPoolHny": "21398.659784944634936554",
+  "convictionPaused": false,
+  "decisionVotesLength": "21",
+  "activeDecisionVotes": [],
+  "activeConvictionProposals": [],
+  "unreadableConvictionProposalIds": [
+    "35",
+    "36",
+    "43",
+    "44",
+    "62",
+    "68",
+    "80",
+    "85",
+    "86",
+    "89",
+    "116",
+    "117",
+    "136",
+    "185"
+  ],
+  "convictionProposalScan": {
+    "firstProposalId": "2",
+    "lastExistingProposalId": "213",
+    "stoppedAfterConsecutiveEmpty": 20
+  },
+  "grants": [
+    {
+      "entity": "0x602a48a53a425521c9923708d277dc7430e3c749",
+      "app": "0x4ba7362f9189572cbb1216819a45aba0d0b2d1cb",
+      "role": "0x0a1ad7b87f5846153c6d5a1f761d71c7d0cfd122384f56066cd33239b7933694",
+      "label": "Preserve Superfluid Agent safe execute",
+      "present": true
+    },
+    {
+      "entity": "0x602a48a53a425521c9923708d277dc7430e3c749",
+      "app": "0x4ba7362f9189572cbb1216819a45aba0d0b2d1cb",
+      "role": "0x8502233096d909befbda0999bb8ea2f3a6be3c138b9fbf003752a4c8bce86f6c",
+      "label": "Preserve Superfluid Agent transfer",
+      "present": true
+    },
+    {
+      "entity": "0xc08fbc829a879470c15916aad14e85905e6ab901",
+      "app": "0x59a15718992a42082ab2306bc6cbd662958a178c",
+      "role": "0x2309a8cbbd5c3f18649f3b7ac47a0e7b99756c2ac146dda1ffc80d3f80827be0",
+      "label": "Preserve Agreement settings role A",
+      "present": true
+    },
+    {
+      "entity": "0xc08fbc829a879470c15916aad14e85905e6ab901",
+      "app": "0x59a15718992a42082ab2306bc6cbd662958a178c",
+      "role": "0x2309a8cbbd5c3f18649f3b7ac47a0e7b99756c2ac146dda1ffc80d3f80827be6",
+      "label": "Preserve Agreement settings role B",
+      "present": true
+    },
+    {
+      "entity": "0x856d17d5323794a7db0ba17f59d4b88fd402d321",
+      "app": "0x602a48a53a425521c9923708d277dc7430e3c749",
+      "role": "0x56c3496db27efc6d83ab1a24218f016191aab8835d442bc0fa8502f327132cbe",
+      "label": "Preserve Superfluid helper role A",
+      "present": true
+    },
+    {
+      "entity": "0x856d17d5323794a7db0ba17f59d4b88fd402d321",
+      "app": "0x602a48a53a425521c9923708d277dc7430e3c749",
+      "role": "0xc3785b41f0ebb77bd89636ecae52c950cee1cd359f0a1e5fababbcb5a0bfcb97",
+      "label": "Preserve Superfluid helper role B",
+      "present": true
+    },
+    {
+      "entity": "0x23e4941f58896705d5c29d641979c4f66b03496f",
+      "app": "0x7714eb44754cb9db6d65b61f3352df12600dc593",
+      "role": "0x9d4f140430c9045e12b5a104aa9e641c09b980a26ab8e12a32a2f3d155229ae3",
+      "label": "Preserve BrightID settings admin",
+      "present": true
+    },
+    {
+      "entity": "0xffffffffffffffffffffffffffffffffffffffff",
+      "app": "0x0b21081c6f8b1990f53fc76279cc41ba22d7afe2",
+      "role": "0xbf05b9322505d747ab5880dfb677dc4864381e9fc3a25ccfa184a3a53d02f4b2",
+      "label": "Revoke public Conviction proposal creation",
+      "present": true
+    },
+    {
+      "entity": "0xffffffffffffffffffffffffffffffffffffffff",
+      "app": "0x0b21081c6f8b1990f53fc76279cc41ba22d7afe2",
+      "role": "0xef025787d7cd1a96d9014b8dc7b44899b8c1350859fb9e1e05f5a546dd65158d",
+      "label": "Revoke public Conviction challenge",
+      "present": true
+    },
+    {
+      "entity": "0x59a15718992a42082ab2306bc6cbd662958a178c",
+      "app": "0x0b21081c6f8b1990f53fc76279cc41ba22d7afe2",
+      "role": "0x8dad640ab1b088990c972676ada708447affc660890ec9fc9a5483241c49f036",
+      "label": "Revoke Agreement link to ConvictionVoting",
+      "present": true
+    },
+    {
+      "entity": "0x0b21081c6f8b1990f53fc76279cc41ba22d7afe2",
+      "app": "0x4ba7362f9189572cbb1216819a45aba0d0b2d1cb",
+      "role": "0x8502233096d909befbda0999bb8ea2f3a6be3c138b9fbf003752a4c8bce86f6c",
+      "label": "Revoke ConvictionVoting Agent transfer",
+      "present": true
+    },
+    {
+      "entity": "0x878759bd8c99048352412a787f0f0c75013df863",
+      "app": "0x0b21081c6f8b1990f53fc76279cc41ba22d7afe2",
+      "role": "0x0e3a87ad3cd0c04dcd1e538226de2b467c72316c162f937f5b6f791361662462",
+      "label": "Revoke legacy Conviction pauser",
+      "present": true
+    },
+    {
+      "entity": "0x783da66eea5a93f46f386806fce49ce18937f861",
+      "app": "0xed062e26c8f41a9088d060156edc7fc6c17d5825",
+      "role": "0x154c00819833dac601ee5ddded6fda79d9d8b506b911b3dbd54cdb95fe6c3686",
+      "label": "Revoke DynamicIssuance mint",
+      "present": true
+    },
+    {
+      "entity": "0x783da66eea5a93f46f386806fce49ce18937f861",
+      "app": "0xed062e26c8f41a9088d060156edc7fc6c17d5825",
+      "role": "0xe97b137254058bd94f28d2f3eb79e2d34074ffb488d042e3bc958e0a57d2fa22",
+      "label": "Revoke DynamicIssuance burn",
+      "present": true
+    },
+    {
+      "entity": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "app": "0x0b21081c6f8b1990f53fc76279cc41ba22d7afe2",
+      "role": "0x82c52f79cad6ac09c16c165c562b50c5e655a09a19bb99b2d182ab3caff020f2",
+      "label": "Revoke DecisionVoting ConvictionVoting.CANCEL_PROPOSALS_ROLE",
+      "present": true
+    },
+    {
+      "entity": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "app": "0x0b21081c6f8b1990f53fc76279cc41ba22d7afe2",
+      "role": "0x9d4f140430c9045e12b5a104aa9e641c09b980a26ab8e12a32a2f3d155229ae3",
+      "label": "Revoke DecisionVoting ConvictionVoting.UPDATE_SETTINGS_ROLE",
+      "present": true
+    },
+    {
+      "entity": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "app": "0x0d33a5ca7149d24628efd43564f577ced33dd34b",
+      "role": "0xc4e90f38eea8c4212a009ca7b8947943ba4d4a58d19b683417f65291d1cd9ed2",
+      "label": "Revoke DecisionVoting EVMScriptRegistry role A",
+      "present": true
+    },
+    {
+      "entity": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "app": "0x0d33a5ca7149d24628efd43564f577ced33dd34b",
+      "role": "0xf7a450ef335e1892cb42c8ca72e7242359d7711924b75db5717410da3f614aa3",
+      "label": "Revoke DecisionVoting EVMScriptRegistry role B",
+      "present": true
+    },
+    {
+      "entity": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "app": "0x4ba7362f9189572cbb1216819a45aba0d0b2d1cb",
+      "role": "0xb421f7ad7646747f3051c50c0b8e2377839296cd4973e27f63821d73e390338f",
+      "label": "Revoke DecisionVoting Agent.RUN_SCRIPT_ROLE",
+      "present": true
+    },
+    {
+      "entity": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "app": "0x4ba7362f9189572cbb1216819a45aba0d0b2d1cb",
+      "role": "0xcebf517aa4440d1d125e0355aae64401211d0848a23c02cc5d29a14822580ba4",
+      "label": "Revoke DecisionVoting Agent.EXECUTE_ROLE",
+      "present": true
+    },
+    {
+      "entity": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "app": "0x59a15718992a42082ab2306bc6cbd662958a178c",
+      "role": "0x07813bca4905795fa22783885acd0167950db28f2d7a40b70f666f429e19f1d9",
+      "label": "Revoke DecisionVoting Agreement.CHANGE_AGREEMENT_ROLE",
+      "present": true
+    },
+    {
+      "entity": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "app": "0x602a48a53a425521c9923708d277dc7430e3c749",
+      "role": "0x56c3496db27efc6d83ab1a24218f016191aab8835d442bc0fa8502f327132cbe",
+      "label": "Revoke DecisionVoting Superfluid role A",
+      "present": true
+    },
+    {
+      "entity": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "app": "0x602a48a53a425521c9923708d277dc7430e3c749",
+      "role": "0xc3785b41f0ebb77bd89636ecae52c950cee1cd359f0a1e5fababbcb5a0bfcb97",
+      "label": "Revoke DecisionVoting Superfluid role B",
+      "present": true
+    },
+    {
+      "entity": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "app": "0x602a48a53a425521c9923708d277dc7430e3c749",
+      "role": "0xf57d195c0663dd0e8a2210bb519e2b7de35301795015198efff16e9a2be238c8",
+      "label": "Revoke DecisionVoting Superfluid role C",
+      "present": true
+    },
+    {
+      "entity": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "app": "0x7714eb44754cb9db6d65b61f3352df12600dc593",
+      "role": "0x9d4f140430c9045e12b5a104aa9e641c09b980a26ab8e12a32a2f3d155229ae3",
+      "label": "Revoke DecisionVoting BrightIdRegister.UPDATE_SETTINGS_ROLE",
+      "present": true
+    },
+    {
+      "entity": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "app": "0x783da66eea5a93f46f386806fce49ce18937f861",
+      "role": "0x9d4f140430c9045e12b5a104aa9e641c09b980a26ab8e12a32a2f3d155229ae3",
+      "label": "Revoke DecisionVoting DynamicIssuance.UPDATE_SETTINGS_ROLE",
+      "present": true
+    },
+    {
+      "entity": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "app": "0x8ccbeab14b5ac4a431fffc39f4bec4089020a155",
+      "role": "0xb6d92708f3d4817afc106147d969e229ced5c46e65e0a5002a0d391287762bd0",
+      "label": "Revoke DecisionVoting Kernel.APP_MANAGER_ROLE",
+      "present": true
+    },
+    {
+      "entity": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "app": "0xbc4fb635636b81e60a4e356c4dceb53cac507d03",
+      "role": "0x0b719b33c83b8e5d300c521cb8b54ae9bd933996a14bef8c2f4e0285d2d2400a",
+      "label": "Revoke DecisionVoting ACL.CREATE_PERMISSIONS_ROLE",
+      "present": true
+    },
+    {
+      "entity": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "app": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "role": "0x4f885d966bcd49734218a6e280d58c840b86e8cc13610b21ebd46f0b1da362c2",
+      "label": "Revoke DecisionVoting DisputableVoting.CHANGE_QUIET_ENDING_ROLE",
+      "present": true
+    },
+    {
+      "entity": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "app": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "role": "0x59ba415d96e104e6483d76b79d9cd09941d04e229adcd62d7dc672c93975a19d",
+      "label": "Revoke DecisionVoting DisputableVoting.CHANGE_DELEGATED_VOTING_PERIOD_ROLE",
+      "present": true
+    },
+    {
+      "entity": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "app": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "role": "0x5e3a3edc315e366a0cc5c94ca94a8f9bbc2f1feebb2ef7704bfefcff0cdc4ee7",
+      "label": "Revoke DecisionVoting DisputableVoting.CHANGE_EXECUTION_DELAY_ROLE",
+      "present": true
+    },
+    {
+      "entity": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "app": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "role": "0xa3f675280fb3c54662067f92659ca1ee3ef7c1a7f2a6ff03a5c4228aa26b6a82",
+      "label": "Revoke DecisionVoting DisputableVoting.CHANGE_QUORUM_ROLE",
+      "present": true
+    },
+    {
+      "entity": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "app": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "role": "0xbc5d8ebc0830a2fed8649987b8263de1397b7fa892f3b87dc2d8cad35c691f86",
+      "label": "Revoke DecisionVoting DisputableVoting.CHANGE_VOTE_TIME_ROLE",
+      "present": true
+    },
+    {
+      "entity": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "app": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "role": "0xf3a5f71f3cb50dae9454dd13cdf0fd1b559f7e20d63c08902592486e6d460c90",
+      "label": "Revoke DecisionVoting DisputableVoting.CHANGE_SUPPORT_ROLE",
+      "present": true
+    },
+    {
+      "entity": "0xffffffffffffffffffffffffffffffffffffffff",
+      "app": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "role": "0xe7dcd7275292e064d090fbc5f3bd7995be23b502c1fed5cd94cfddbbdcd32bbc",
+      "label": "Revoke public Decision vote creation",
+      "present": true
+    },
+    {
+      "entity": "0xffffffffffffffffffffffffffffffffffffffff",
+      "app": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "role": "0xef025787d7cd1a96d9014b8dc7b44899b8c1350859fb9e1e05f5a546dd65158d",
+      "label": "Revoke public Decision challenge",
+      "present": true
+    },
+    {
+      "entity": "0x59a15718992a42082ab2306bc6cbd662958a178c",
+      "app": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "role": "0x8dad640ab1b088990c972676ada708447affc660890ec9fc9a5483241c49f036",
+      "label": "Revoke Agreement link to DisputableVoting",
+      "present": true
+    },
+    {
+      "entity": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "app": "0x0b21081c6f8b1990f53fc76279cc41ba22d7afe2",
+      "role": "0x0e3a87ad3cd0c04dcd1e538226de2b467c72316c162f937f5b6f791361662462",
+      "label": "Temporarily grant DecisionVoting Conviction pause",
+      "present": false
+    },
+    {
+      "entity": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "app": "0x4ba7362f9189572cbb1216819a45aba0d0b2d1cb",
+      "role": "0x8502233096d909befbda0999bb8ea2f3a6be3c138b9fbf003752a4c8bce86f6c",
+      "label": "Temporarily grant DecisionVoting Agent transfer",
+      "present": false
+    }
+  ],
+  "managers": [
+    {
+      "app": "0x0b21081c6f8b1990f53fc76279cc41ba22d7afe2",
+      "role": "0x0e3a87ad3cd0c04dcd1e538226de2b467c72316c162f937f5b6f791361662462",
+      "label": "ConvictionVoting.PAUSE_CONTRACT_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0x0b21081c6f8b1990f53fc76279cc41ba22d7afe2",
+      "role": "0x82c52f79cad6ac09c16c165c562b50c5e655a09a19bb99b2d182ab3caff020f2",
+      "label": "ConvictionVoting.CANCEL_PROPOSALS_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0x0b21081c6f8b1990f53fc76279cc41ba22d7afe2",
+      "role": "0x8dad640ab1b088990c972676ada708447affc660890ec9fc9a5483241c49f036",
+      "label": "ConvictionVoting.SET_AGREEMENT_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0x0b21081c6f8b1990f53fc76279cc41ba22d7afe2",
+      "role": "0x9d4f140430c9045e12b5a104aa9e641c09b980a26ab8e12a32a2f3d155229ae3",
+      "label": "ConvictionVoting.UPDATE_SETTINGS_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0x0b21081c6f8b1990f53fc76279cc41ba22d7afe2",
+      "role": "0xbf05b9322505d747ab5880dfb677dc4864381e9fc3a25ccfa184a3a53d02f4b2",
+      "label": "ConvictionVoting.CREATE_PROPOSALS_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0x0b21081c6f8b1990f53fc76279cc41ba22d7afe2",
+      "role": "0xef025787d7cd1a96d9014b8dc7b44899b8c1350859fb9e1e05f5a546dd65158d",
+      "label": "ConvictionVoting.CHALLENGE_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0x0d33a5ca7149d24628efd43564f577ced33dd34b",
+      "role": "0xc4e90f38eea8c4212a009ca7b8947943ba4d4a58d19b683417f65291d1cd9ed2",
+      "label": "EVMScriptRegistry role A",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0x0d33a5ca7149d24628efd43564f577ced33dd34b",
+      "role": "0xf7a450ef335e1892cb42c8ca72e7242359d7711924b75db5717410da3f614aa3",
+      "label": "EVMScriptRegistry role B",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0x4ba7362f9189572cbb1216819a45aba0d0b2d1cb",
+      "role": "0x0a1ad7b87f5846153c6d5a1f761d71c7d0cfd122384f56066cd33239b7933694",
+      "label": "Agent.SAFE_EXECUTE_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0x4ba7362f9189572cbb1216819a45aba0d0b2d1cb",
+      "role": "0x8502233096d909befbda0999bb8ea2f3a6be3c138b9fbf003752a4c8bce86f6c",
+      "label": "Agent.TRANSFER_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0x4ba7362f9189572cbb1216819a45aba0d0b2d1cb",
+      "role": "0xb421f7ad7646747f3051c50c0b8e2377839296cd4973e27f63821d73e390338f",
+      "label": "Agent.RUN_SCRIPT_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0x4ba7362f9189572cbb1216819a45aba0d0b2d1cb",
+      "role": "0xcebf517aa4440d1d125e0355aae64401211d0848a23c02cc5d29a14822580ba4",
+      "label": "Agent.EXECUTE_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0x59a15718992a42082ab2306bc6cbd662958a178c",
+      "role": "0x07813bca4905795fa22783885acd0167950db28f2d7a40b70f666f429e19f1d9",
+      "label": "Agreement.CHANGE_AGREEMENT_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0x59a15718992a42082ab2306bc6cbd662958a178c",
+      "role": "0x2309a8cbbd5c3f18649f3b7ac47a0e7b99756c2ac146dda1ffc80d3f80827be0",
+      "label": "Agreement role A",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0x59a15718992a42082ab2306bc6cbd662958a178c",
+      "role": "0x2309a8cbbd5c3f18649f3b7ac47a0e7b99756c2ac146dda1ffc80d3f80827be6",
+      "label": "Agreement role B",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0x602a48a53a425521c9923708d277dc7430e3c749",
+      "role": "0x56c3496db27efc6d83ab1a24218f016191aab8835d442bc0fa8502f327132cbe",
+      "label": "Superfluid role A",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0x602a48a53a425521c9923708d277dc7430e3c749",
+      "role": "0xc3785b41f0ebb77bd89636ecae52c950cee1cd359f0a1e5fababbcb5a0bfcb97",
+      "label": "Superfluid role B",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0x602a48a53a425521c9923708d277dc7430e3c749",
+      "role": "0xf57d195c0663dd0e8a2210bb519e2b7de35301795015198efff16e9a2be238c8",
+      "label": "Superfluid role C",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0x7714eb44754cb9db6d65b61f3352df12600dc593",
+      "role": "0x9d4f140430c9045e12b5a104aa9e641c09b980a26ab8e12a32a2f3d155229ae3",
+      "label": "BrightIdRegister.UPDATE_SETTINGS_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0x783da66eea5a93f46f386806fce49ce18937f861",
+      "role": "0x9d4f140430c9045e12b5a104aa9e641c09b980a26ab8e12a32a2f3d155229ae3",
+      "label": "DynamicIssuance.UPDATE_SETTINGS_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0x8ccbeab14b5ac4a431fffc39f4bec4089020a155",
+      "role": "0xb6d92708f3d4817afc106147d969e229ced5c46e65e0a5002a0d391287762bd0",
+      "label": "Kernel.APP_MANAGER_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0xbc4fb635636b81e60a4e356c4dceb53cac507d03",
+      "role": "0x0b719b33c83b8e5d300c521cb8b54ae9bd933996a14bef8c2f4e0285d2d2400a",
+      "label": "ACL.CREATE_PERMISSIONS_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0xed062e26c8f41a9088d060156edc7fc6c17d5825",
+      "role": "0x154c00819833dac601ee5ddded6fda79d9d8b506b911b3dbd54cdb95fe6c3686",
+      "label": "HookedTokenManager.MINT_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0xed062e26c8f41a9088d060156edc7fc6c17d5825",
+      "role": "0xe97b137254058bd94f28d2f3eb79e2d34074ffb488d042e3bc958e0a57d2fa22",
+      "label": "HookedTokenManager.BURN_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "role": "0x4f885d966bcd49734218a6e280d58c840b86e8cc13610b21ebd46f0b1da362c2",
+      "label": "DisputableVoting.CHANGE_QUIET_ENDING_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "role": "0x59ba415d96e104e6483d76b79d9cd09941d04e229adcd62d7dc672c93975a19d",
+      "label": "DisputableVoting.CHANGE_DELEGATED_VOTING_PERIOD_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "role": "0x5e3a3edc315e366a0cc5c94ca94a8f9bbc2f1feebb2ef7704bfefcff0cdc4ee7",
+      "label": "DisputableVoting.CHANGE_EXECUTION_DELAY_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "role": "0x8dad640ab1b088990c972676ada708447affc660890ec9fc9a5483241c49f036",
+      "label": "DisputableVoting.SET_AGREEMENT_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "role": "0xa3f675280fb3c54662067f92659ca1ee3ef7c1a7f2a6ff03a5c4228aa26b6a82",
+      "label": "DisputableVoting.CHANGE_QUORUM_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "role": "0xbc5d8ebc0830a2fed8649987b8263de1397b7fa892f3b87dc2d8cad35c691f86",
+      "label": "DisputableVoting.CHANGE_VOTE_TIME_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "role": "0xe7dcd7275292e064d090fbc5f3bd7995be23b502c1fed5cd94cfddbbdcd32bbc",
+      "label": "DisputableVoting.CREATE_VOTES_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "role": "0xef025787d7cd1a96d9014b8dc7b44899b8c1350859fb9e1e05f5a546dd65158d",
+      "label": "DisputableVoting.CHALLENGE_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    },
+    {
+      "app": "0xfbd0b2726070a9d6aff6d7216c9e9340eae68b2a",
+      "role": "0xf3a5f71f3cb50dae9454dd13cdf0fd1b559f7e20d63c08902592486e6d460c90",
+      "label": "DisputableVoting.CHANGE_SUPPORT_ROLE",
+      "manager": "0xfBd0B2726070a9D6AfF6D7216c9E9340Eae68b2a"
+    }
+  ]
+}
