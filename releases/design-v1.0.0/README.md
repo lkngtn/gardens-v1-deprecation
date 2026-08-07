@@ -4,7 +4,7 @@ This bundle is unsigned verification evidence. It cannot sign or submit a transa
 
 ## Snapshot
 
-- Source commit: `166c605e4451524f54668904e524e8a7067753f8`
+- Source commit: `061e8e70b86c302ef5454cc6839e24cb7bcfc6c4`
 - Gnosis block: `47606645` / `0x5186613522dda0bb356cffa5775fca326c5d0e7a1034e9795f28c06c9b058c35`
 - Replacement authority: `0x70997970C51812dc3A010C7d01b50e0d17dc79C8` (design-eoa)
 - Common Pool HNY: `21398659784944634936554` wei (21398.659784944634936554 HNY)
